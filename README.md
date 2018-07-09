@@ -90,37 +90,32 @@ zFromX(5) = ekfState(5);
 ### Meet the performance criteria. ###
 The estimator was able to successfully meet the performance criteria with the controller provided. All its parameters were properly adjusted to satisfy those criteria.
 
-#### Scenario 5: ####
-<p align="center">
-<img src="animations/scenario5_Haya.gif" width="500"/>
-</p>
-
-### Scenario 6: ###
+#### Scenario 6: ####
 <p align="center">
 <img src="animations/scenario6_Haya.gif" width="500"/>
 </p>
 
-### Scenario 7: ###
+#### Scenario 7: ####
 <p align="center">
 <img src="animations/scenario7_Haya.gif" width="500"/>
 </p>
 
-### Scenario 8: ###
+#### Scenario 8: ####
 <p align="center">
 <img src="animations/scenario8_Haya.gif" width="500"/>
 </p>
 
-### Scenario 9: ###
+#### Scenario 9: ####
 <p align="center">
 <img src="animations/scenario9_Haya.gif" width="500"/>
 </p>
 
-### Scenario 10: ###
+#### Scenario 10: ####
 <p align="center">
 <img src="animations/scenario10_Haya.gif" width="500"/>
 </p>
 
-### Scenario 11: ###
+#### Scenario 11: ####
 <p align="center">
 <img src="animations/scenario11_Haya.gif" width="500"/>
 </p>

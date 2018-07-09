@@ -170,25 +170,24 @@ VectorXf QuadEstimatorEKF::PredictState(VectorXf curState, float dt, V3F accel, 
 
   ////////////////////////////// BEGIN STUDENT CODE ///////////////////////////
     
-    V3F accel_I = attitude.Rotate_BtoI(accel);
     
 //    VectorXf change(6);
 //
 //    change(0) = curState(3);
 //    change(1) = curState(4);
 //    change(2) = curState(5);
-//    change(3) = accel_I.x;
-//    change(4) = accel_I.y;
-//    change(5) = accel_I.z - dt * CONST_GRAVITY;
+//    change(3) = attitude.Rotate_BtoI(accel).x;
+//    change(4) = attitude.Rotate_BtoI(accel).y;
+//    change(5) = attitude.Rotate_BtoI(accel).z - dt * CONST_GRAVITY;
 //    
 //    predictedState += dt * change;
     
     predictedState(0) = curState(0) + dt * curState(3);
     predictedState(1) = curState(1) + dt * curState(4);
     predictedState(2) = curState(2) + dt * curState(5);
-    predictedState(3) = curState(3) + dt * accel_I.x;
-    predictedState(4) = curState(4) + dt * accel_I.y;
-    predictedState(5) = curState(5) + dt * accel_I.z - dt * CONST_GRAVITY;
+    predictedState(3) = curState(3) + dt * attitude.Rotate_BtoI(accel).x;
+    predictedState(4) = curState(4) + dt * attitude.Rotate_BtoI(accel).y;
+    predictedState(5) = curState(5) + dt * attitude.Rotate_BtoI(accel).z - dt * CONST_GRAVITY;
     
   /////////////////////////////// END STUDENT CODE ////////////////////////////
 
@@ -340,11 +339,8 @@ void QuadEstimatorEKF::UpdateFromMag(float magYaw)
     hPrime(6) = 1;
     zFromX(0) = ekfState(6);
 
-    if (magYaw - ekfState(6) > F_PI) {
-        zFromX(0) += 2.f*F_PI;
-    } else if (magYaw - ekfState(6) < -F_PI) {
-        zFromX(0) -= 2.f*F_PI;
-    }
+    if (magYaw - ekfState(6) > F_PI) zFromX(0) += 2.f*F_PI;
+    if (magYaw - ekfState(6) < -F_PI)zFromX(0) -= 2.f*F_PI;
     
   /////////////////////////////// END STUDENT CODE ////////////////////////////
 

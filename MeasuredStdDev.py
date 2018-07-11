@@ -7,7 +7,7 @@ AccelXY  = pandas.read_csv("./config/log/Graph2.txt", sep=",", header=None, skip
 _ , MeasuredStdDev_GPSPosXY = GPSPosXY.std(axis=0)
 _ , MeasuredStdDev_AccelXY = AccelXY.std(axis=0)
 
-print('MeasuredStdDev_GPSPosXY = %0.2f' % MeasuredStdDev_GPSPosXY)
+print('MeasuredStdDev_GPSPosXY = %0.4f' % MeasuredStdDev_GPSPosXY)
 print('MeasuredStdDev_AccelXY = %0.2f' % MeasuredStdDev_AccelXY)
 
 #for line in fileinput.input("./config/06_SensorNoise.txt", inplace=True):
